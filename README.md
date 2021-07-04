@@ -1,7 +1,7 @@
 # WeAudioDL
-【使用说明】下载并打开 main.py，修改allUrl 为你要下载的链接 
-
-（saveFolder 下载保存路径，pagetxt 调试时看的网页源码的保存路径）
+【使用说明】
+1. 安装selenium，requests
+2. 下载并打开 main.py，修改参数：allUrl 广播剧合集链接，saveFolder 保存路径
 
 ## 提供微信公众号文章链接，下载广播剧  
 预览
