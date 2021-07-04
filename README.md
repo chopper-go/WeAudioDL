@@ -1,6 +1,6 @@
 # WeAudioDL
 【使用说明】
-1. 安装selenium，requests
+1. 安装selenium, requests, chrome webdriver
 2. 下载并打开 main.py，修改参数：allUrl 广播剧合集链接，saveFolder 保存路径
 
 ## 提供微信公众号文章链接，下载广播剧  
