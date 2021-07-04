@@ -1,7 +1,7 @@
 # WeAudioDL
 【使用说明】
 1. 安装selenium, requests, chrome webdriver
-2. 下载并打开 main.py，修改参数：allUrl 广播剧合集链接，saveFolder 保存路径
+2. 下载并打开 main.py，修改参数：allUrl 广播剧合辑链接，saveFolder 保存路径
 
 ## 提供微信公众号文章链接，下载广播剧  
 预览
@@ -21,18 +21,18 @@
 是否下载 《攻略对象出了错》by金刚圈 1-16期（江山&锦鲤） ? (Y/N) Y
 ~~~
 
-### 1. 提供微信公众号文章链接，获取文章中的所有广播剧，并逐个询问是否下载？
+### 1. 提供微信公众号的合辑链接（allUrl），获取所有广播剧，并逐个询问是否下载？
 ~~~
 https://mp.weixin.qq.com/mp/appmsgalbum?__biz=Mzk0OTI0NDgwOA==&action=getalbum&album_id=1864379555835101185&scene=173
 ~~~
 
 ![image](https://github.com/chopper-go/WeAudioDL/blob/main/image/1.png)
 
-### 2. 下载 这部广播剧页面里的所有音频。
+### 2. 下载 每部广播剧的所有音频。
 
   ![image](https://github.com/chopper-go/WeAudioDL/blob/main/image/2.png)
 
-### 3. 下载结果。
+### 3. 下载结果如下：
 
   ![image](https://github.com/chopper-go/WeAudioDL/blob/main/image/3.png)
 
