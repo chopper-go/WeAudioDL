@@ -26,14 +26,16 @@
 ~~~
 https://mp.weixin.qq.com/mp/appmsgalbum?__biz=Mzk0OTI0NDgwOA==&action=getalbum&album_id=1864379555835101185&scene=173
 ~~~
-合集 页面预览
+
+广播剧合辑 页面
+
 ![image](https://github.com/chopper-go/WeAudioDL/blob/main/image/1.png)
 
-### 2. 下载 每部的所有音频。
-点进每部广播剧的 页面预览
+点进每部广播剧的 页面
+
   ![image](https://github.com/chopper-go/WeAudioDL/blob/main/image/2.png)
 
-### 3. 下载结果如下：
+ ### 2. 下载 每部广播剧的所有音频到本地文件夹，如下：
 
   ![image](https://github.com/chopper-go/WeAudioDL/blob/main/image/3.png)
 
