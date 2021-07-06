@@ -4,7 +4,7 @@
 2. 下载并打开 main.py，修改参数：allUrl 音频合辑链接，saveFolder 保存路径
 
 ## 修改微信公众号的音频专辑链接，下载音频  
-预览
+结果预览
 ~~~
 一共检索到 67 部广播剧。
 ...
@@ -19,17 +19,18 @@
 是否下载 广播剧 | 《一个钢镚儿》第一季1-12期＋小剧场（吴晛&李轻扬） ? (Y/N) N
 是否下载 广播剧 | 《一个钢镚儿》第二季1-14期（吴晛&李轻扬） ? (Y/N) N
 是否下载 《攻略对象出了错》by金刚圈 1-16期（江山&锦鲤） ? (Y/N) Y
+...
 ~~~
 
 ### 1. 提供微信公众号的音频合辑链接（allUrl），获取所有音频列表，并逐个询问是否下载？
 ~~~
 https://mp.weixin.qq.com/mp/appmsgalbum?__biz=Mzk0OTI0NDgwOA==&action=getalbum&album_id=1864379555835101185&scene=173
 ~~~
-
+合集 页面预览
 ![image](https://github.com/chopper-go/WeAudioDL/blob/main/image/1.png)
 
 ### 2. 下载 每部的所有音频。
-
+点进每部广播剧的 页面预览
   ![image](https://github.com/chopper-go/WeAudioDL/blob/main/image/2.png)
 
 ### 3. 下载结果如下：
