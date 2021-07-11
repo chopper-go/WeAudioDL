@@ -1,12 +1,19 @@
 # WeAudioDL
 【使用说明】
 1. 安装requests, selenium, chrome webdriver
-2. 下载并打开 main.py，修改参数：allUrl 音频合辑链接，saveFolder 保存路径
+2. 下载并编辑 main.py，修改参数：allUrl 音频合辑链接，saveFolder 保存路径
+3. 运行main.py，按提示选择【1】下载专辑【2】下载音频
 
-## 修改微信公众号的音频专辑链接，下载音频  
-结果预览
+## 微信公众号的专辑 下载预览
 ~~~
-一共检索到 67 部广播剧。
+本工具用于下载微信公众号发布的广播剧、有声小说等音频。
+
+请根据下载方式输入 1 或 2 ：
+【1】下载专辑（网页中只有链接，不含音频）
+【2】下载音频（网页中含音频）
+1
+请输入专辑链接(链接中含album)：https://mp.weixin.qq.com/mp/appmsgalbum?__biz=Mzk0OTI0NDgwOA==&action=getalbum&album_id=1864379555835101185&scene=173
+一共检索到 69 部广播剧。
 ...
 是否下载 广播剧 | 《你的距离》by公子优 小剧场（郑希&羊仔） ? (Y/N)  Y
 0.G:\mp3\有声小说\你的距离小剧场08·钢笔.mp3 已保存
@@ -22,20 +29,34 @@
 ...
 ~~~
 
-### 1. 提供微信公众号的音频合辑链接（allUrl），获取所有音频列表，并逐个询问是否下载？
-~~~
-https://mp.weixin.qq.com/mp/appmsgalbum?__biz=Mzk0OTI0NDgwOA==&action=getalbum&album_id=1864379555835101185&scene=173
-~~~
-
-广播剧合辑 页面
+### 专辑 页面
 
 ![image](https://github.com/chopper-go/WeAudioDL/blob/main/image/1.png)
 
-点进每部广播剧的 页面
+
+## 微信公众号发布的音频 下载预览
+获取当前页面的所有音频，并逐个下载，已下载的跳过
+~~~
+请根据下载方式输入 1 或 2 ：
+【1】下载专辑（网页中只有链接，不含音频）
+【2】下载音频（网页中含音频）
+2
+请输入音频链接(网页中含音频)：https://mp.weixin.qq.com/s?__biz=Mzk0OTI0NDgwOA==&mid=2247483785&idx=1&sn=08d08a074fbdee85727e6fc13a79ece8&cur_album_id=1864379555835101185#rd
+
+0. 《小白杨》第一期.mp3 已存在，跳过
+1. 小白杨第二集.mp3 已存在，跳过
+2. 小白杨第三期.mp3 下载成功
+3. 《小白杨》第四期.mp3 下载成功
+4. 《小白杨》第五期.mp3 下载成功
+5. 小白杨第六期.mp3 下载成功
+6. 《小白杨》第七期.mp3 下载成功
+~~~
+
+### 音频 页面
 
   ![image](https://github.com/chopper-go/WeAudioDL/blob/main/image/2.png)
 
- ### 2. 下载 每部广播剧的所有音频到本地文件夹，如下：
+ ### 下载到本地文件夹，预览：
 
   ![image](https://github.com/chopper-go/WeAudioDL/blob/main/image/3.png)
 
