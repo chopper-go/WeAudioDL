@@ -4,17 +4,13 @@
 import requests
 import re #正则
 import time 
+import os
 
 from selenium import webdriver
 from selenium.webdriver.chrome.options import Options
 
-saveFolder='D:\\有声小说'
-pagetxt='D:\\pagetxt.txt' #调试用
-
-
-# 广播剧列表
-# allUrl='https://mp.weixin.qq.com/mp/appmsgalbum?__biz=Mzk0OTI0NDgwOA==&action=getalbum&album_id=1864379555835101185&scene=173'
-
+saveFolder='c:\\有声小说'
+pagetxt='c:\\pagetxt.txt' #调试用
 
 def getMediaEachPage(url):
     chrome_options = Options()  
@@ -29,7 +25,7 @@ def getMediaEachPage(url):
         pageSource=driver.page_source.replace("&nbsp;","")
         driver.close()
         Id=re.findall("voice_encode_fileid=\"(.*?)\"",pageSource)
-        Name=re.findall("role=\"link\">(.*?)</strong>",pageSource)
+        Name=re.findall("\" name=\"(.*?)\"",pageSource)
 
         #获取不到音频信息时，查看源码
         l=len(Id)
@@ -85,33 +81,25 @@ def getList(url):
     except Exception as e:
         print(e)
 
-print('本工具用于下载微信公众号发布的广播剧、有声小说等音频\n')
-choose= input('请根据下载方式输入 1 或 2 ：\n【1】下载专辑（网页中只有链接，不含音频）\n【2】直接下载（网页中含音频）\n')
+inputUrl = input('本工具用于下载微信公众号发布的广播剧、有声小说等音频。\n 请输入【专辑】或【音频】链接：\n')
 
-if choose =='1':
-    allurl =''
-    if  allurl =='':
-        allurl=input('请输入专辑链接(链接中含album)：')  
-    allpages=getList(allUrl)
+if '&album_id=' in inputUrl:  #下载专辑
+    allpages=getList(inputUrl)
     pageName=allpages[0]
     pageLink=allpages[1]
 
     for i in range(0,len(pageName)):    
-        # if input('是否下载 ' + pageName[i] + ' ? (Y/N) ')  =='Y':
+        if input('是否下载 ' + pageName[i] + ' ? (Y/N) ')  =='Y':
             media=getMediaEachPage(pageLink[i])
             if len(media[1]) > 0:
                 SaveMP3(media)
                 print('='*6 ,pageName[i],'下载完成','='*6)
             else:
                 print('!'*6 ,pageName[i],'未获取到，跳过','!'*6)
-if choose =='2':
-    SingleUrl =''
-    if  SingleUrl =='':
-        SingleUrl=input('请输入音频链接(网页中含播放的音频)：')
-        media=getMediaEachPage(SingleUrl)
-        if len(media[1]) > 0:
-            SaveMP3(media)
-            print('='*6 ,'下载完成','='*6)
+if '&mid=' in inputUrl:  #下载单部广播剧
+    media=getMediaEachPage(inputUrl)
+    if len(media[1]) > 0:
+        SaveMP3(media)
+        print('='*6 ,'下载完成','='*6)
 else:
-    print('='*6 ,'未下载，退出','='*6)
-    
+    print('='*6 ,'链接中不包含album_id 或 mid，无法下载','='*6)
